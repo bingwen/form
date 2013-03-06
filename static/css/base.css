@@ -1,0 +1,74 @@
+body {
+	*text-align: center;
+	font-size: 12px;
+	font-family: '宋体',ncursive,Arial, Verdana, Geneva,sans-serif;
+	font-weight: normal;
+	color: #444444;
+}
+
+#box {
+	background: white;
+	width: 920px;
+	margin: 30px auto;
+	border: 6px solid #77d3ff;
+	*border-bottom: none;
+	*border-top: none;
+	padding: 10px 50px;
+}
+.head {
+	line-height: 20px;
+	text-align: center;
+	width: 96%;
+	padding: 10px 2%;
+	*border-bottom: dashed 1px #CCCCCC;
+}
+.head h1 {
+	color: #19a8ee;
+}
+
+.question {
+	border: 2px solid white;
+	padding: 4px 4px 5px 4px;
+	border-bottom: 1px solid #EFEFEF;
+	clear: both;
+	margin: 2px auto;
+	width: 96%;
+	height: auto;
+}
+.qu_title {
+	overflow: hidden;
+	font-size: 14px;
+	color: #373A3D;
+	font-weight: bold;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+.qu_ans_list{
+	margin-left: 20px;
+}
+.qu_ans {
+	margin-bottom: 5px;
+	font-size: 12px;
+	color: #333333;
+}
+.submit {
+	margin: 20px auto;
+	text-align: center;
+}
+.submitbutton {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+	font-size: 15px;
+	color: #fff;
+	font-weight: bold;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding: 0 15px;
+	overflow: visible;
+	border: 1px solid #0492d6;
+	background: #13a5ec;
+}

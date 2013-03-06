@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8;">
+  <title>{% block title %}问卷{% endblock %}</title> 
+
+  <link href="/static/css/base.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="/static/js/jquery-1.8.2.min.js"></script>
+  {% block more_header %}{% endblock %}
+</head>
+<body>
+
+  <div id="box">
+    <form action="/form_submit/{{form_id}}/" method="post">
+      {% csrf_token %}
+      <div class="head">
+        <h1>
+          {{ title }}
+        </h1>
+      </div>
+
+      <div class="content">
+        {% for question in questions %}
+            <div class="question">
+              <div class="qu_title">
+                {{ forloop.counter }}. {{ question.title }}
+              </div>
+              <div class="qu_ans_list">
+                {% for an in question.ans.all %}
+                  <div class="qu_ans">
+                    <input type="radio" name="{{ question.id }}" value="{{ an.id }}">
+                    <label>{{ an }}</label>
+                  </div>
+                {% endfor %}
+            </div>
+            </div>
+
+        {% endfor %}
+        
+      <div class="submit">
+        <input type="submit" class="submitbutton" value="提交问卷" id="submit_button"></input>
+      </div>
+    </form>
+  </div>
+
+
+
+   {% block javascript %}{% endblock %}
+</body>
+</html>
+
