@@ -39,6 +39,22 @@ def home(request):
 	}
 	return render_to_response('index.html',context, context_instance=RequestContext(request))
 
+def statistic(request,form_id):
+	print ">>>>form_id:",form_id
+	form = Form.objects.get(id=form_id)
+	print ">>>>",form.title
+	questions = form.question_set.all()
+	print ">>>>",questions
+
+	for x in questions:
+		print ">>>",x.ans.all()
+
+	context = {
+		'form_id':form_id,
+		'title':form.title,
+		'questions':questions,
+	}
+	return render_to_response('statistic.html',context, context_instance=RequestContext(request))
 
 def form(request,form_id):
 	print ">>>>form_id:",form_id
@@ -60,14 +76,23 @@ def form(request,form_id):
 def form_submit(request,form_id):
 	print ">>>>form_id:",form_id
 	form = Form.objects.get(id=form_id)
-	print ">>>>",form.title
+	if not form:
+		pass
+	submit = Submit(form=form)
+	submit.save()
+
 	
 	for key in request.POST:
-		print type(key)
-		if check(key):
-			print ">>>%s,%s" % (key,request.POST[key])
+		try:
+			question = Question.objects.get(id=key)
+			ans = Ans.objects.get(id=request.POST[key])
+			if question and ans:
+				subitem = Subitem(submit=submit,question=question,ans=ans)
+				subitem.save()
+				print ">>>>subitem:%s,%s" % (question,ans)
+		except Exception, e:
+			pass
 		
 
-
-
-	return render_to_response('form.html', context_instance=RequestContext(request))
+		
+	return render_to_response('result.html', context_instance=RequestContext(request))

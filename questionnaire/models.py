@@ -123,7 +123,7 @@ class Submit(models.Model):
     submit_datetime = models.DateTimeField(u'添加时间', auto_now_add=True)
 
     def __unicode__(self):
-        return self.form.title+self.id
+        return self.form.title
     
     class Meta:
         db_table = 'submit'

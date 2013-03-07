@@ -6,13 +6,27 @@ body {
 	color: #444444;
 }
 
+.nav-item {
+	color: white;
+	line-height: 20px;
+	font-size: 16px;
+}
+.wraper {
+	width: 920px;
+
+	margin: 30px auto;
+	margin-top: 70px;
+}
+label {
+	display: inline-block;
+	margin-left: 10px;
+}
 #box {
 	background: white;
-	width: 920px;
+	width: 800px;
 	margin: 30px auto;
 	border: 6px solid #77d3ff;
-	*border-bottom: none;
-	*border-top: none;
+
 	padding: 10px 50px;
 }
 .head {
@@ -24,6 +38,16 @@ body {
 }
 .head h1 {
 	color: #19a8ee;
+}
+
+.msg{
+	text-align: center;
+
+	width: 96%;
+	color: #19a8ee;
+	font-size: 30px;
+	line-height: 36px;
+}
 }
 
 .question {
@@ -71,4 +95,8 @@ body {
 	overflow: visible;
 	border: 1px solid #0492d6;
 	background: #13a5ec;
+}
+
+.table {
+	border: 2px solid #77d3ff;
 }
