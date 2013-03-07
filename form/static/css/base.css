@@ -29,6 +29,33 @@ label {
 
 	padding: 10px 50px;
 }
+.statistic{
+	margin-bottom: 10px;
+	text-align: center;
+}
+.tip{
+	display: inline-block;
+	margin-right: 30px;
+	margin: 0,auto;
+}
+.form-content{
+	width: 800px;
+}
+.content {
+	width: 500px;
+	float: left;
+}
+.submiter{
+	width: 300px;
+	float: right;
+}
+.submiter-item{
+	width: 80px;
+	overflow: hidden;
+	display: inline-block;
+	line-height: 40px;
+	font-size: 16px;
+}
 .head {
 	line-height: 20px;
 	text-align: center;
@@ -98,5 +125,49 @@ label {
 }
 
 .table {
+	width: 800px;
+	margin: 0 auto;
 	border: 2px solid #77d3ff;
+}
+.login-box {
+	width: 600px;
+	margin: 100px auto;
+	border: 2px solid #77d3ff;
+	padding: 30px 30px;
+	border-radius: 8px;
+}
+.login-box h2{
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.fieldWrapper{
+	width: 70%;
+	margin: 0 auto;
+}
+.fieldWrapper label{
+	min-width: 80px;
+}
+.action-btn {
+	margin-top: 30px;
+}
+.action-btn button{
+	margin: 0 20px;
+}
+.errorlist{
+	color: red;
+}
+.nav2{
+	float: right;
+}
+
+#copyright{
+	width: 97%;
+	margin: 0 auto;
+	padding: 10px 0;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #666666;
+	text-align: center;
 }

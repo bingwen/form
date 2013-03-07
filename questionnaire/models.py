@@ -9,7 +9,6 @@ from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.core.urlresolvers import reverse
 
-
 class OrderedModel(models.Model):
     order = models.PositiveIntegerField(editable=False)
 
@@ -120,10 +119,11 @@ class Submit(models.Model):
     """docstring for Submit"""
     
     form = models.ForeignKey(Form)
+    user = models.ForeignKey(User)
     submit_datetime = models.DateTimeField(u'添加时间', auto_now_add=True)
 
     def __unicode__(self):
-        return self.form.title
+        return self.form.title+self.user.username
     
     class Meta:
         db_table = 'submit'
