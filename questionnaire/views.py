@@ -23,6 +23,10 @@ from django.contrib.auth.models import User
 
 from account.views import requirelogin
 
+import sys 
+reload(sys) 
+sys.setdefaultencoding('utf8')
+
 @requirelogin
 def home(request):
 	forms = Form.objects.all()
@@ -118,7 +122,7 @@ def submit(request,form_id,user_id):
 	
 	questions = form.question_set.all()
 
-	ans_str = ""
+	ans_str = u""
 	index = 1
 	for question in questions:
 		ans_str += """<div class="question"><div class="qu_title">%s.%s</div><div class="qu_ans_list">""" % (index,question.title)
@@ -130,12 +134,10 @@ def submit(request,form_id,user_id):
 			except Exception, e:
 				pass
 			if selected:
-				ans_str+="""<div class="qu_ans"><i class="icon-ok"></i><label>"""+an.title+"""</label>
-		          	</div>"""
+				ans_str+="""<div class="qu_ans"><i class="icon-ok"></i><label>%s</label></div>""" % an.title
 			else:
-				ans_str+="""<div class="qu_ans">&nbsp;&nbsp;&nbsp;&nbsp;<label>"""+an.title+"""</label>
-		          	</div>"""
-		ans_str += "</div></div>"
+				ans_str+="""<div class="qu_ans">&nbsp;&nbsp;&nbsp;&nbsp;<label>%s</label></div>""" % an.title
+        ans_str += """</div></div>"""
 		index += 1
 	print ">>>>",ans_str
 	context = {
