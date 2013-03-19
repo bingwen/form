@@ -137,7 +137,7 @@ def submit(request,form_id,user_id):
 				ans_str+="""<div class="qu_ans"><i class="icon-ok"></i><label>%s</label></div>""" % an.title
 			else:
 				ans_str+="""<div class="qu_ans">&nbsp;&nbsp;&nbsp;&nbsp;<label>%s</label></div>""" % an.title
-        ans_str += """</div></div>"""
+		ans_str += """</div></div>"""
 		index += 1
 	print ">>>>",ans_str
 	context = {

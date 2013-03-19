@@ -105,8 +105,8 @@ class Question(models.Model):
 	"""question model"""
 	
 	title = models.CharField(u'问题', max_length=80)
-	form = models.ForeignKey(Form)
-	ans = models.ManyToManyField(Ans)
+	form = models.ForeignKey(Form,verbose_name=u'问卷')
+	ans = models.ManyToManyField(Ans,verbose_name=u'答案')
 	
 	def __unicode__(self):
 		return self.title
